@@ -1,13 +1,14 @@
 package com.company;
 
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-
+ // Task 1
         Random random = new Random();   // creating a new Random () class object ( instance od Random() class)
         int mysteriousRandomNumber;  // creating a new int type variable
         mysteriousRandomNumber = random.nextInt(10) + 1; // value assignment (storing random number in mysteriousRandomNumber)
@@ -42,6 +43,24 @@ public class Main {
 
         System.out.println("You win this GuessingGameRandomNumber!!!");
         System.out.println("You tried to guess: " + numberOfShots + " times.");
+ // Task 2
+        // Array of positive numbers
+        int[] arrayPositive = {6, 5, 10, 30, 2, 15, 9, 11};
+        int k = 3;
+
+        System.out.println("Length od arrayPositive: " + arrayPositive.length + "\narrayPositive numbers: " + Arrays.toString(arrayPositive));
+
+        int maxSum = 0;
+
+        for (int firstIndex = 0; firstIndex <= arrayPositive.length - k; firstIndex++) {
+            int sum = 0;
+            for (int value = firstIndex; value < firstIndex + k; value++) {
+                sum = sum + arrayPositive[value];
+            }
+            maxSum = Math.max(sum, maxSum);
+        }
+        int result = maxSum;
+        System.out.println("MaxSum of 3 elements is: " + result);
+    }
 
     }
-}
